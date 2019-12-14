@@ -1,0 +1,21 @@
+[package]
+name = "wasm"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[build-dependencies]
+cfgrammar = { path="../../cfgrammar" }
+lrlex = { path="../../lrlex" }
+lrpar = { path="../../lrpar" }
+
+[dependencies]
+cfgrammar = { path="../../cfgrammar" }
+lrlex = { path="../../lrlex" }
+lrpar = { path="../../lrpar" }
+wasm-bindgen = "0.2"
+
+[dev-dependencies]
+wasm-pack = "0.8"

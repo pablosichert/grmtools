@@ -1,0 +1,21 @@
+{
+  "name": "wasm",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.7.3",
+    "webpack": "~4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "build": "npm run build:wasm -- --dev && npm run webpack -- --mode=development",
+    "build:release": "npm run build:wasm -- --release && npm run webpack -- --mode=production",
+    "build:wasm": "wasm-pack build",
+    "webpack": "npx webpack src/index.js -o dist/bundle.js",
+    "up": "docker-compose up -d",
+    "down": "docker-compose down"
+  },
+  "author": "Pablo Sichert <mail@pablosichert.com>"
+}
